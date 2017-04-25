@@ -1,0 +1,82 @@
+{
+    "name": "yiisoft/yii2-app-basic",
+    "description": "Yii 2 Basic Project Template",
+    "keywords": ["yii2", "framework", "basic", "project template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-swiftmailer": "*",
+        "kartik-v/yii2-widget-sidenav": "*",
+        "kartik-v/yii2-widget-affix": "*",
+        "kartik-v/yii2-widget-activeform": "@dev",
+        "kartik-v/yii2-widget-growl": "*",
+        "kartik-v/yii2-widget-alert": "*",
+        "dmstr/yii2-adminlte-asset": "*",
+        "kartik-v/yii2-tree-manager": "*",
+        "kartik-v/yii2-dropdown-x": "dev-master",
+        "kartik-v/yii2-money": "dev-master",
+        "kartik-v/yii2-widget-select2": "@dev",
+        "kartik-v/yii2-builder": "@dev",
+        "kartik-v/yii2-widgets": "dev-master",
+        "kartik-v/yii2-export": "@dev",
+        "kartik-v/yii2-mpdf": "dev-master",
+        "kartik-v/yii2-grid": "@dev",
+        "kartik-v/yii2-editable": "@dev",
+        "kartik-v/yii2-icons": "@dev",
+        "yiisoft/yii2-jui": "*",
+        "kartik-v/yii2-dynagrid": "*",
+        "kartik-v/yii2-checkbox-x": "@dev",
+        "kartik-v/yii2-helpers": "dev-master",
+        "amnah/yii2-user": "*",
+        "kartik-v/yii2-field-range": "*",
+        "codemix/yii2-excelexport": "*",
+        "moonlandsoft/yii2-phpexcel": "*",
+        "phpoffice/phpexcel": "*"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-faker": "*",
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1",
+        "codeception/specify": "~0.4.3"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
